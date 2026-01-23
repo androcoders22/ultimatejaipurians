@@ -1639,26 +1639,29 @@ nav.site-nav { z-index: 100;}
             </div>
         </div>
 
-        <div class="billing-footer">
-                  <button id="downloadBtn" class="btn pay-button">
-                    <!-- onclick="paymentRazorpay()" -->
-                    <span id="pay-btn" class="btn-text">Proceed to Payment</span>
+
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+          <button onclick="gpayPayment()" id="downloadBtn" class="btn pay-button">
+                    <a href="tez://upi/pay?pa=mohsin06388@okhdfcbank&pn=MyStore&am=1&cu=INR"><span id="pay-btn" class="btn-text">G Pay</span></a>
+                    <span class="loader"></span>
+            </button>
+
+                  <button onclick="phonepayPayment()" id="downloadBtn" class="btn pay-button">
+                    <span id="pay-btn" class="btn-text">Phone Pay</span>
                     <span class="loader"></span>
                   </button>
         </div>
+
+        <!-- <div class="billing-footer">
+                  <button onclick="paymentRazorpay()" id="downloadBtn" class="btn pay-button">
+                    <span id="pay-btn" class="btn-text">Proceed to Payment</span>
+                    <span class="loader"></span>
+                  </button>
+        </div> -->
     </div>
 	    <!-- </div> -->
   </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1785,16 +1788,14 @@ nav.site-nav { z-index: 100;}
 
      <script src="main.js" defer></script>
      <script src="carousel.js" defer></script>
-      <script type="application/javascript" src="https://secure.paytmpayments.com/merchantpgpui/checkoutjs/merchants/gfWLtr04448499190835.js" crossorigin="anonymous"></script>
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
+     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     
     
     <script>
 
-      const BACKEND_URL_INDEX_PAGE = 'https://api.ultimatejaipurians.in'
-      //const BACKEND_URL_INDEX_PAGE = 'http://localhost:8000'
+      //const BACKEND_URL_INDEX_PAGE = 'https://api.ultimatejaipurians.in'
+      const BACKEND_URL_INDEX_PAGE = 'http://localhost:9900'
 		
 		function payAfterSomeTime() {
         alert("Pay After Sometime...")
